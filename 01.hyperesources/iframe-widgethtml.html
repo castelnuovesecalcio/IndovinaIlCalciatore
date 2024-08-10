@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore da 30 secondi</title>
+    <style>
+        body {
+            font-family: CCWhatchamacallit, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: transparent;
+        }
+        #counter {
+            font-size: 2em;
+            color: white;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">30</div>
+
+    <script>
+        // Inizializza il contatore a 30 secondi
+        let timeLeft = 30;
+
+        // Seleziona l'elemento HTML in cui verrà mostrato il contatore
+        const counterElement = document.getElementById('counter');
+
+        // Funzione che decrementa il contatore
+        const countdown = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+            } else {
+                timeLeft--;
+                counterElement.textContent = timeLeft;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
